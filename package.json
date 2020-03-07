@@ -1,0 +1,37 @@
+{
+  "name": "cirullino_js",
+  "version": "1.0.0",
+  "description": "a telegam bot to play cirulla card fame",
+  "main": "main.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^2.0.2",
+    "redis": "^3.0.2",
+    "telegraf": "^3.36.0"
+  },
+  "devDependencies": {
+    "esm": "^3.2.25"
+  },
+  "scripts": {
+    "dev": "nodemon -r esm src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabriFila/cirullino_js.git"
+  },
+  "keywords": [
+    "bot",
+    "telegram",
+    "cards"
+  ],
+  "author": "GabriFila",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabriFila/cirullino_js/issues"
+  },
+  "homepage": "https://github.com/GabriFila/cirullino_js#readme"
+}
