@@ -2,13 +2,13 @@
   "name": "cirullino_js",
   "version": "1.0.0",
   "description": "a telegam bot to play cirulla card fame",
-  "main": "main.js",
+  "main": "src/main.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
     "start": "node -r esm src/main.js",
-    "dev": "nodemon -r esm src/main.js"
+    "dev": "nodemon --exec babel-node src/main.js"
   },
   "dependencies": {
     "bluebird": "^3.7.2",
@@ -19,6 +19,10 @@
     "telegraf": "^3.36.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.10.0",

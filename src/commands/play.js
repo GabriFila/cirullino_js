@@ -7,6 +7,7 @@ const playHandler = ctx => {
   const { id } = ctx.message.from;
   redis
     .hexistsAsync('userActiveGroup', `${id}`)
+
     .then(res => {
       console.log(res);
       if (res === 0) {
