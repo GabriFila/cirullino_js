@@ -1,17 +1,20 @@
+/* eslint-disable no-console */
 import Telegraf from 'telegraf';
 import fetch from 'node-fetch';
 
 import { BOT_TOKEN, NODE_ENV, PORT, URL } from './config';
 
 const bot = new Telegraf(BOT_TOKEN);
-console.log('env: ', NODE_ENV);
 if (NODE_ENV === 'dev') {
+  console.log('in development');
   fetch(`https://api.telegram.org/bot${BOT_TOKEN}/deleteWebhook`)
-    .then(() => {
+    .then(res => {
       console.info('webhook deleted for dev purpose');
       bot.startPolling();
+      return res.json();
     })
-    .catch(err => console.error(err.message.red));
+    .then(res => console.log(res))
+    .catch(err => console.error('bot link error', err.message.red));
 } else if (NODE_ENV === 'prod') {
   console.log('in production');
   bot.telegram.setWebhook(`${URL}bot${BOT_TOKEN}`);

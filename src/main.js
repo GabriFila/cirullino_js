@@ -12,10 +12,10 @@ bot.use(stage.middleware()); // any is here to make it work bc typing are SHIT
 
 bot.use(mantainUserRelation);
 
-bot.command('aiuto', ctx => ctx.reply.apply(ctx, helpMsg()));
-bot.command('privacy', ctx => ctx.reply.apply(ctx, privacyMsg()));
-bot.command('info', ctx => ctx.reply.apply(ctx, aboutMsg()));
-bot.command('tutorial', ctx => ctx.reply.apply(ctx, tutorialMsg()));
+bot.command('aiuto', ctx => ctx.reply(...helpMsg()));
+bot.command('privacy', ctx => ctx.reply(...privacyMsg()));
+bot.command('info', ctx => ctx.reply(...aboutMsg()));
+bot.command('tutorial', ctx => ctx.reply(...tutorialMsg()));
 
 bot.command('sfida', playHandler);
 

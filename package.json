@@ -6,6 +6,10 @@
   "directories": {
     "doc": "docs"
   },
+  "scripts": {
+    "start": "node -r esm src/main.js",
+    "dev": "nodemon -r esm src/main.js"
+  },
   "dependencies": {
     "bluebird": "^3.7.2",
     "dotenv": "^8.2.0",
@@ -21,10 +25,6 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-prettier": "^3.1.2",
     "esm": "^3.2.25"
-  },
-  "scripts": {
-    "start": "node src/main.js",
-    "dev": "nodemon -r esm src/main.js"
   },
   "repository": {
     "type": "git",
