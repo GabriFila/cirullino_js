@@ -1,7 +1,14 @@
+import { Promise } from 'bluebird';
+import redis, { createClient } from 'redis';
+
 import { REDIS_URL } from './config';
-import { promisify } from 'util';
 
-import { createClient } from 'redis';
-const redis = createClient(REDIS_URL);
+const db = createClient(REDIS_URL);
 
-export default redis;
+Promise.promisifyAll(redis);
+
+// db.hgetAsync('users', 'gabrifila')
+//   .then(res => console.log(res))
+//   .catch(err => console.error(err));
+
+export default db;
