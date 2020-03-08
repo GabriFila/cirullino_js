@@ -8,12 +8,12 @@ const bot = new Telegraf(BOT_TOKEN);
 if (NODE_ENV === 'dev') {
   console.log('in development');
   fetch(`https://api.telegram.org/bot${BOT_TOKEN}/deleteWebhook`)
+    .then(res => res.json())
     .then(res => {
-      console.info('webhook deleted for dev purpose');
+      if (res.ok === true && res.result === true)
+        console.info('webhook deleted for dev purpose');
       bot.startPolling();
-      return res.json();
     })
-    .then(res => console.log(res))
     .catch(err => console.error('bot link error', err.message.red));
 } else if (NODE_ENV === 'prod') {
   console.log('in production');

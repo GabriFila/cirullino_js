@@ -1,4 +1,6 @@
 import { Extra } from 'telegraf';
+import dispButtons from './helpers/general/dispButtons';
+
 const markdown = Extra.markdown();
 
 export const helpMsg = () => [
@@ -38,11 +40,30 @@ export const errorMsg = () => [
 ];
 
 export const infoMsg = () => ``;
-export const noANumberMsg = () => ``;
-export const notStartedMsg = () => ``;
-export const userAlreadyPlayingMsg = () => ``;
-export const notInvitedMsg = () => ``;
-export const inviteReqMsg = () => ``;
-export const stillSomeoneToAcceptMsg = () => ``;
-export const notPlayingMsg = () => ``;
-export const userNotActiveMsg = () => ``;
+export const askANumberMsg = () => [
+  `Dimmi un numero tra 1 e 3`,
+  dispButtons(['1', '2', '3'])
+];
+export const notANumberMsg = () => [
+  `Devi dirmi un numero tra 1 e 3`,
+  dispButtons(['1', '2', '3'])
+];
+export const notOwnUsername = () => [
+  'Il tuo username è già compreso, dimmi gli altri giocatori'
+];
+export const askUsername = oppNumber => [
+  `Dimmi lo username del giocatore ${oppNumber}`
+];
+// TODO add link for bot
+export const notStartedBotMsg = user => [
+  `Mi dispiace ma ${user} non ha avviato cirullino, inviagli questo link ...`,
+  { ...markdown, ...Extra.webPreview(false) }
+];
+export const userAlreadyPlayingMsg = user => [
+  `Mi dispiace ma ${user} sta già giocando, chiedigli di ternimare il gioco`
+];
+export const notInvitedMsg = () => [``];
+export const inviteReqMsg = () => [``];
+export const stillSomeoneToAcceptMsg = () => [``];
+export const notPlayingMsg = () => [``];
+export const userNotActiveMsg = () => [``];

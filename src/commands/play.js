@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import redis from '../db';
 import { errorMsg, alreadyPlayingMsg } from '../responses';
+import { COUNT_OPPONENTS_ID } from '../constants';
 
 const playHandler = ctx => {
   ctx.reply('Perfetto! Mi preparo per una nuova partita!');
@@ -11,7 +12,7 @@ const playHandler = ctx => {
     .then(res => {
       console.log(res);
       if (res === 0) {
-        ctx.scene.enter('count-opponents');
+        ctx.scene.enter(COUNT_OPPONENTS_ID);
       } else if (res === 1) ctx.reply(...alreadyPlayingMsg());
     })
     .catch(err => {
