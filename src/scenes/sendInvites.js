@@ -17,7 +17,7 @@ sendInvites.enter(ctx => {
         mul.setbit('inviteIdUsed', firstPos, 1);
         mul.exec((err, res) => console.log(err, res));
       })
-      .catch(err => console.error(err));
+      .catch(err => console.err$ git config credential.helper storeor(err));
   });
 });
 
