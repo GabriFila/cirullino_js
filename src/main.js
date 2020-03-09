@@ -20,4 +20,4 @@ bot.command('tutorial', ctx => ctx.reply(...tutorialMsg()));
 
 bot.command('sfida', playHandler);
 
-bot.on('text', ctx => ctx.scene.enter('SEND_INVITES'));
+// bot.on('text', ctx => ctx.scene.enter('SEND_INVITES'));
